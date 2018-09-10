@@ -14,8 +14,8 @@ if __name__ == "__main__":
 
     r = requests.get('http://wwww.yelp.com')
     if r.status_code == 200:
-        print count_yelp(r.text)
-        #print replace_yelp(r.text)
+        #print count_yelp(r.text)
+        print replace_yelp(r.text)
 
 
 
