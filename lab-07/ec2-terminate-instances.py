@@ -1,7 +1,6 @@
 import boto3
 from botocore.exceptions import ClientError
 
-
 def prepare_instance_list():
     mylist = []
     ec2_resource = boto3.resource('ec2')
@@ -22,9 +21,12 @@ def delete_instances(instance_list):
 
     ec2_client.terminate_instances(InstanceIds=instance_list,DryRun=False)
 
+
 instance_list = prepare_instance_list()
 if len(instance_list) !=0:
     print ( "Deleting Instances", instance_list)
     delete_instances(instance_list)
 else:
     print ( "No Instances to delete ")
+
+    
